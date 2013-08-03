@@ -1,11 +1,11 @@
 var express = require('express');
 var fs=require('fs');
 var buf=require('buffer');
-//var path=require('path');
 
 var app = express();
 app.use(express.logger());
-app.use(express.static(__dirname + '/bootstrap'));
+app.use(express.static(__dirname, 'bootstrap'));
+//app.use(express.static(__dirname + '/public'));
 app.get('/', function(request, response) {
     response.send(fs.readFileSync('index.html').toString());
     });
